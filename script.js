@@ -56,8 +56,6 @@ function updateCard() {
                               <p><strong>Interests:</strong> ${currentProfile.interests}</p>
                               <p><strong>Location:</strong> ${currentProfile.city}, ${currentProfile.country}</p>
                           </div>
-                          <button class="btn dislike-btn" id="dislike-btn">Dislike</button>
-                          <button class="btn like-btn" id="like-btn">Like</button>
                       </div>`;
     cardsContainer.innerHTML = '';
     cardsContainer.appendChild(card);
@@ -65,30 +63,12 @@ function updateCard() {
 
 // Function to handle dislike button click
 function handleDislike() {
-    const card = document.querySelector('.card');
-    card.style.transform = 'translateX(-1000px) rotate(-30deg)';
     currentIndex = (currentIndex + 1) % profiles.length;
-    setTimeout(() => {
-        updateCard();
-        card.style.transition = 'none';
-        card.style.transform = 'translateX(0) rotate(0)';
-        setTimeout(() => {
-            card.style.transition = 'transform 0.3s ease';
-        }, 50);
-    }, 300);
+    updateCard();
 }
 
 // Function to handle like button click
 function handleLike() {
-    const card = document.querySelector('.card');
-    card.style.transform = 'translateX(1000px) rotate(30deg)';
     currentIndex = (currentIndex + 1) % profiles.length;
-    setTimeout(() => {
-        updateCard();
-        card.style.transition = 'none';
-        card.style.transform = 'translateX(0) rotate(0)';
-        setTimeout(() => {
-            card.style.transition = 'transform 0.3s ease';
-        }, 50);
-    }, 300);
+    updateCard();
 }
