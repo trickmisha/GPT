@@ -1,0 +1,23 @@
+/* Ваши стили для шапки и фильтров */
+
+.profiles {
+    display: flex;
+    justify-content: center;
+}
+
+.profile-card {
+    max-width: 300px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    margin: 10px;
+    transition: transform 0.3s;
+}
+
+.profile-card:hover {
+    transform: scale(1.05);
+}
+
+/* Ваши стили карточек профилей и футера */
